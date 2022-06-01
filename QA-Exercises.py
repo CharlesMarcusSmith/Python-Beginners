@@ -44,8 +44,17 @@ def collections_exercise():
 # If the mark is between 65 and 85 print "Pass"
 # Anything else print "Fail"
 
+def conditionals_exercise():
+    user_input = int(input("Please enter the mark you have received: "))
+    if user_input >= 86:
+        print("Distinction")
+    elif user_input >= 65:
+        print("Pass")
+    elif user_input <= 64:
+        print("Fail")
 
 
 # Calling functions
 # introduction_exercise ()
 # collections_exercise()
+# conditionals_exercise()
