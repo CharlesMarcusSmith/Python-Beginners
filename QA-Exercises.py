@@ -18,17 +18,24 @@ def introduction_exercise():
 # Write a program which asks the user for an author name and prints, as a string, the list of books by that author (hint: remember the join() method).
 # Stretch goal: Display the list of books in alphabetical order
 
+# import itertools                                                                                                                                                                    #used with bl list
 def collections_exercise():
-    books = {"Leo Tolstoy":["Anna Karenina", "Childhood", "Biography"], "Gustav Flaubert":["Madame Bovary"], "Vladimir Nabokov":["Lolita"],                                     #Here we have stored books in lists, under author keys; the list was needed in hindsight to allow multiple results, as each author must be unique to the book sets
+    books = {"Leo Tolstoy":["Anna Karenina", "Childhood", "Biography"], "Gustav Flaubert":["Madame Bovary"], "Vladimir Nabokov":["Lolita"],                                         #Here we have stored books in lists, under author keys; the list was needed in hindsight to allow multiple results, as each author must be unique to the book sets
              "Mark Twain":["The Adventures of Huckleberry Finn"]}
     
-    print(f"Please see the following list of authors: {tuple(books.keys())}")                                                                                                   #outputting the authors into a tuple
+    print(f"Please see the following list of authors: {tuple(books.keys())}")                                                                                                       #outputting the authors into a tuple
     user_selection = input(f"please type an authors full name, to search what books they have produced: ")
     if user_selection in books.keys():                                                                                                                                              #This tests if True, you don't type "== True"
         print(f"{user_selection} has produced the following books: {books[user_selection]}")                                                                                        #searching for the author
     else:
         print("Unfortunately no books were found under that author")
         collections_exercise()
+    bl = list(books.values())
+    # bl = list(itertools.chain.from_iterable(bl))                                                                                                                                  #This intertools.chain.from_iterable is used to unpack from [ , , ], [],[]... into 1 list, which  we can then sort  however the sum below does this better
+    # print(bl)
+    result = sum(bl, [])                                                                                                                                                            #This compiles [ , , , ],[ , , ],[] into 1 list, same as 34 but with less code called = more efficient
+    print(result)
+    NOW WE NEED TO SORT IT
 
 
 
