@@ -58,10 +58,8 @@ def conditionals_exercise():
 
 # Write a while loop which asks for the names of 5 people, and for each person prints their name followed by the text "is awesome!"
 
-# Work out what the following for loop does:
 
-# for i in range(10, 21, 2):
-#     print(i)
+# I have done this in both while and range loops
 
 def iteration_exercise_while():
     user_input = []
@@ -74,18 +72,60 @@ def iteration_exercise_while():
         print(f"{user_input[counter]} is awesome!")
         counter = counter + 1
 
-def iteration_exercise_range():                                                                                                                                                 #This works the same as above, except the range() function is used to determine the loop iteration
+def iteration_exercise_range():                                                                                                                                                     #This works the same as above, except the range() function is used to determine the loop iteration
     user_input = []
     for counter in range(5):
         user_input.append(input(f"Please enter name number {counter + 1}: "))
     for counter in range(5):
         print(f"{user_input[counter]} is awesome!")
 
+# Work out what the following for loop does:
+def iteration_challenge():
+    for i in range(10, 21, 2):                                                                                                                                                      #counts from 10, to 21, in intervals of 2
+        print(i)
 
-# Calling functions
+# Functions Exercise:
+
+# Create a new python file. In that file create a program that works out a grade based on marks with the use of functions.
+
+# The program should take the students name, homework score (/25), assessment score (/50) and final exam score (/100) as inputs, and output their name and final ICT grade as a percentage.
+
+# Reminder: any inputs and prints should not be included inside the function definition, and should strictly be done outside.
+
+# Stretch goal: Include grade boundaries such that the program also outputs a grade for the student (A, B, etc.)
+
+def functions_exercise():
+    b = "no"                                                                                                                                                                        #used to break loop.
+    scores = {}                                                                                                                                                                     #empty dict.
+    print("Once you have finished adding student scores, please type 'finished'")
+    while b != "yes":                                                                                                                                                               #checking for break.
+        sn = ""                                                                                                                                                                     #empty local variable for each loop iteration, used to store the different inputs.
+        hs = ""
+        ass = ""
+        fes = ""
+        
+        sn = input("Please enter the students name: ")                                                                                                                              
+        if sn != "finished":                                                                                                                                                        #checking if we need to exit the loop, done at each stage in case user needs to exit midway due to a mistake etc.
+            hs = input("Please enter the students homework score: ")
+        if sn != "finished" and hs != "finished":                                                                                                                                   #checking if we need to exit the loop, done at each stage in case user needs to exit midway due to a mistake etc.
+            ass = input("Please enter the assessment score: ")
+        if sn != "finished" and hs != "finished" and ass != "finished":                                                                                                             #checking if we need to exit the loop, done at each stage in case user needs to exit midway due to a mistake etc.
+            fes = input("Please enter the final exam score: ")
+        if sn == "finished" or hs == "finished" or ass == "finished" or fes == "finished":                                                                                          #check if we need to exit, 
+            b = "yes"                                                                                                                                                               #if so, b variable set to "yes".
+        if sn != "finished" and hs != "finished" and ass != "finished" and fes != "finished":                                                                                       #checking to make sure we need to append, if we are exiting the loop we don't want to append the current entries.
+            scores[sn] = hs,ass,fes                                                                                                                                                 #appends local variables to dict record as {[sn]:[hs, ass, fes]}.
+            print(f"Scores added for {sn}.")
+    print("You have now finished entering scores")
+    print(scores)
+
+        
+
+# CALLING FUNCTIONS-------------------------------------------------------------------------------------------------------------------------------------------------------------
 # introduction_exercise ()
 # collections_exercise()
-# conditionals_exercise()#
+# conditionals_exercise()
 # iteration_exercise_while()
-iteration_exercise_range()
-
+# iteration_exercise_range()
+# iteration_challenge()
+functions_exercise()
