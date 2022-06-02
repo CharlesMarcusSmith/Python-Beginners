@@ -45,16 +45,47 @@ def collections_exercise():
 # Anything else print "Fail"
 
 def conditionals_exercise():
-    user_input = int(input("Please enter the mark you have received: "))
+    user_input = int(input("Please enter the mark you have received: "))                                                                                                            
     if user_input >= 86:
         print("Distinction")
-    elif user_input >= 65:
+    elif user_input >= 65:                                                                                                                                                          #elif used instead of and statements for ease of writing
         print("Pass")
     elif user_input <= 64:
         print("Fail")
 
 
+# Iteration Exercise:
+
+# Write a while loop which asks for the names of 5 people, and for each person prints their name followed by the text "is awesome!"
+
+# Work out what the following for loop does:
+
+# for i in range(10, 21, 2):
+#     print(i)
+
+def iteration_exercise_while():
+    user_input = []
+    counter = 0
+    while counter != 5:
+        user_input.append(input(f"Please enter name number {counter + 1}: "))
+        counter = counter + 1
+    counter = 0
+    while counter != 5:
+        print(f"{user_input[counter]} is awesome!")
+        counter = counter + 1
+
+def iteration_exercise_range():                                                                                                                                                 #This works the same as above, except the range() function is used to determine the loop iteration
+    user_input = []
+    for counter in range(5):
+        user_input.append(input(f"Please enter name number {counter + 1}: "))
+    for counter in range(5):
+        print(f"{user_input[counter]} is awesome!")
+
+
 # Calling functions
 # introduction_exercise ()
 # collections_exercise()
-# conditionals_exercise()
+# conditionals_exercise()#
+# iteration_exercise_while()
+iteration_exercise_range()
+
